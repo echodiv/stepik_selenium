@@ -1,0 +1,20 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium import webdriver
+
+browser = webdriver.Chrome()
+link = 'http://suninjuly.github.io/explicit_wait2.html'
+browser.get(link)
+'''
+# говорим Selenium проверять в течение 5 секунд, пока кнопка не станет кликабельной
+button = WebDriverWait(browser, 5).until
+                    EC.element_to_be_clickable((By.ID, "check"))
+                    )
+'''
+button = browser.find_element(By.CSS_SELECTOR("button#book"))
+button.click()
+
+#message = browser.find_element_by_id("check_message")
+
+#assert "успешно" in ../log/message.text
